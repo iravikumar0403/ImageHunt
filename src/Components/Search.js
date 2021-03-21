@@ -26,7 +26,7 @@ class Search extends Component {
           <input
             className="searchInput"
             type="text"
-            placeholder="Enter search keyword"
+            placeholder="Search"
             value={this.state.searchTxt}
             onChange={this.handleChange}
           />

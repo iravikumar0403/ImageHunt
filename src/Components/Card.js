@@ -7,8 +7,9 @@ class Card extends Component {
 
   render() {
     return (
-      <div onClick={this.clickHandler} className="card">
+      <div className="card">
         <img
+          onClick={this.clickHandler}
           className="thumbImg"
           src={this.props.data.urls.small}
           alt="dummyImg"

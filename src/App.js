@@ -4,7 +4,6 @@ import Search from "./Components/Search";
 import WallpaperGrid from "./Components/WallpaperGrid";
 import Modal from "./Components/Modal";
 import { unsplash } from "./utils/config";
-// import { ACCESS_KEY } from "./utils/AccessKey";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +39,7 @@ class App extends Component {
       .getRandom({ count: 15, query: this.state.searchTxt })
       .then((result) => {
         if (result.errors) {
-          console.log("error occurred: ", result.errors[0]);
+          alert("error occurred: ", result.errors[0]);
         } else {
           const data = result.response;
           this.setState({
