@@ -12,7 +12,7 @@ class Card extends Component {
           onClick={this.clickHandler}
           className="thumbImg"
           src={this.props.data.urls.small}
-          alt="dummyImg"
+          alt={this.props.data.alt_description}
         />
       </div>
     );

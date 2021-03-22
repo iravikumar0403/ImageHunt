@@ -7,7 +7,7 @@ const Modal = (props) => {
         <img
           className="modalImg"
           src={props.mydata.urls.regular}
-          alt={props.mydata.description}
+          alt={props.mydata.alt_description}
         />
         <a
           className="btn"
