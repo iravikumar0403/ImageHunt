@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "./Card";
-import Loader from "./Loader";
 const WallpaperGrid = (props) => {
   const { data, clickHandler } = props;
   return (
