@@ -4,6 +4,7 @@ import Search from "./Components/Search";
 import WallpaperGrid from "./Components/WallpaperGrid";
 import Modal from "./Components/Modal";
 import { unsplash } from "./utils/config";
+import Loader from "react-loader-spinner";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +13,7 @@ class App extends Component {
       searchTxt: "",
       wallpaperData: [],
       modalData: {},
+      loading: true,
     };
   }
 
@@ -35,6 +37,9 @@ class App extends Component {
   };
 
   getData = () => {
+    this.setState({
+      loading: true,
+    });
     unsplash.photos
       .getRandom({ count: 15, query: this.state.searchTxt })
       .then((result) => {
@@ -44,6 +49,7 @@ class App extends Component {
           const data = result.response;
           this.setState({
             wallpaperData: this.state.wallpaperData.concat(data),
+            loading: false,
           });
         }
       });
@@ -69,9 +75,19 @@ class App extends Component {
             clickHandler={this.updateModal}
           />
         </div>
-        <button className="btn" onClick={this.getData}>
-          Load More
-        </button>
+        {this.state.loading ? (
+          <Loader
+            type="ThreeDots"
+            color="#00BFFF"
+            height={50}
+            width={50}
+            timeout={3000}
+          />
+        ) : (
+          <button className="btn" onClick={this.getData}>
+            Load More
+          </button>
+        )}
       </>
     );
   }

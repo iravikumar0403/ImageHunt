@@ -99,3 +99,7 @@ a{
     max-height: 90vh;
     max-width: 90vw;
 }
+
+.loader{
+    background-color: red;
+}
